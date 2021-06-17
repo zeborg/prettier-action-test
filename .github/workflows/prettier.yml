@@ -1,4 +1,4 @@
-name: Lint
+name: Prettier
 
 on:
   push:
@@ -7,24 +7,9 @@ on:
 
 jobs:
   lint:
-    name: Run prettier
+    name: Run Prettier linting
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-
-      # ESLint and Prettier must be in `package.json`
-      - name: Install Node.js dependencies
-        run: npm ci
-
-      - name: Run linters
-        uses: wearerequired/lint-action@v1
-        with:
-          prettier: true
-          auto_fix: true
+      - name: Prettier Action
+        uses: creyD/prettier_action@v3.3
