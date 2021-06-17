@@ -1,1 +1,1 @@
-function test()    {console.log('huhu') }
+function test()    {console.log( 'huhu') }
